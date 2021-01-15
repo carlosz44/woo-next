@@ -1,7 +1,7 @@
 {
-  "name": "next-starter-tailwind",
+  "name": "woo-next",
   "version": "2.0.0",
-  "description": "Next.js starter styled with Tailwind CSS",
+  "description": "WooCommerce backed Next.js starter styled with Tailwind CSS",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -10,14 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taylorbryant/next-starter-tailwind.git"
+    "url": "git+https://github.com/carlosz44/woo-next.git"
   },
-  "author": "Taylor Bryant",
+  "author": "Carlos Amorós",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/taylorbryant/next-starter-tailwind/issues"
-  },
-  "homepage": "https://github.com/taylorbryant/next-starter-tailwind#readme",
+  "homepage": "https://github.com/carlosz44/woo-next.git#readme",
   "dependencies": {
     "next": "10.0.4",
     "react": "17.0.1",
