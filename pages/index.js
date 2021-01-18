@@ -1,5 +1,6 @@
 import client from "components/ApolloClient";
 import Image from "next/image";
+import Link from "next/link";
 import { gql } from "@apollo/client";
 
 const PRODUCTS_QUERY = gql`
@@ -11,6 +12,8 @@ const PRODUCTS_QUERY = gql`
         slug
         description
         name
+        databaseId
+        sku
         image {
           uri
           srcSet
@@ -28,7 +31,6 @@ const PRODUCTS_QUERY = gql`
 
 export default function IndexPage(props) {
   const { products } = props;
-
   console.log(props);
   return (
     <div className="flex flex-col items-center justify-center space-y-12">
@@ -45,7 +47,16 @@ export default function IndexPage(props) {
       </h2>
       <ul>
         {products.length
-          ? products.map((product) => <li key={product.id}>{product.name}</li>)
+          ? products.map((product) => (
+              <li key={product.id}>
+                <Link
+                  as={`/product/${product.slug}`}
+                  href={`/product?slug=${product.slug}-${product.databaseId}`}
+                >
+                  <a>{product.name}</a>
+                </Link>
+              </li>
+            ))
           : ""}
       </ul>
     </div>
