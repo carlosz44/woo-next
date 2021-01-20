@@ -1,10 +1,13 @@
+import { useState, useContext } from "react";
+import { AppContext } from "./context/AppContext";
 import Link from "next/link";
-import { useState } from "react";
 import cn from "classnames";
 import Image from "next/image";
+import CartIcon from "./cart/CartIcon";
 
 export default function Header() {
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
+  const [cart, setCart] = useContext(AppContext);
 
   return (
     <header className="bg-green-600">
@@ -56,6 +59,7 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        <CartIcon />
       </div>
     </header>
   );

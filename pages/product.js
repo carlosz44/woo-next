@@ -1,4 +1,4 @@
-import client from "../components/ApolloClient";
+import client from "../src/components/ApolloClient";
 import { withRouter } from "next/router";
 import { gql } from "@apollo/client";
 
@@ -22,7 +22,6 @@ import { gql } from "@apollo/client";
 
 const Product = ({ props }) => {
   const { product } = props;
-  console.log(props);
   return (
     <>
       {product ? (

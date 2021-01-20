@@ -1,3 +1,14 @@
 module.exports = {
-  purge: ["./components/**/*.js", "./pages/**/*.js"],
+  purge: ["./src/components/**/*.js", "./pages/**/*.js"],
+  theme: {
+    fontFamily: {
+      main: ["Roboto"],
+      titles: ["Oswald"],
+    },
+    extend: {
+      colors: {
+        main: "#9E2126",
+      },
+    },
+  },
 };

@@ -5,7 +5,7 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
-import clientConfig from "../client-config";
+import clientConfig from "../../client-config";
 
 const client = new ApolloClient({
   link: createHttpLink({

@@ -1,6 +1,6 @@
-import "../css/index.css";
+import "../src/css/index.css";
 import Head from "next/head";
-import Layout from "@components/Layout";
+import Layout from "src/components/Layout";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }) {
           content="A WooCommerce backed Next.js starter styled using Tailwind CSS."
         />
       </Head>
-
       <Component {...pageProps} />
     </Layout>
   );

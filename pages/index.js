@@ -1,6 +1,7 @@
-import client from "components/ApolloClient";
+import client from "src/components/ApolloClient";
+import ProductCard from "../src/components/ui/ProductCard";
 import Image from "next/image";
-import Link from "next/link";
+
 import { gql } from "@apollo/client";
 
 const PRODUCTS_QUERY = gql`
@@ -29,9 +30,7 @@ const PRODUCTS_QUERY = gql`
   }
 `;
 
-export default function IndexPage(props) {
-  const { products } = props;
-  console.log(props);
+export default function IndexPage({ products }) {
   return (
     <div className="flex flex-col items-center justify-center space-y-12">
       <Image
@@ -45,16 +44,11 @@ export default function IndexPage(props) {
       <h2 className="p-3 font-bold bg-yellow-300 md:text-2xl">
         Listado de productos
       </h2>
-      <ul>
+      <ul className="space-y-4">
         {products.length
           ? products.map((product) => (
               <li key={product.id}>
-                <Link
-                  as={`/product/${product.slug}`}
-                  href={`/product?slug=${product.slug}-${product.databaseId}`}
-                >
-                  <a>{product.name}</a>
-                </Link>
+                <ProductCard product={product} />
               </li>
             ))
           : ""}
