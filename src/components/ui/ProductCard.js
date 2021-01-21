@@ -11,8 +11,8 @@ export default function ProductCard({ product }) {
       >
         <a className="text-center space-y-4">
           <Image
-            src="/240.png"
-            alt=""
+            src={product.image.sourceUrl}
+            alt={product.name}
             width={240}
             height={240}
             className="w-full"

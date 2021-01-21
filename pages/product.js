@@ -19,9 +19,29 @@ import { gql } from "@apollo/client";
 //     </>
 //   );
 // }
+const PRODUCT_QUERY = gql`
+  query Product($id: ID!) {
+    product(id: $id, idType: DATABASE_ID) {
+      databaseId
+      slug
+      name
+      sku
+      averageRating
+      shortDescription
+      description
+      ... on SimpleProduct {
+        id
+        name
+        regularPrice
+        price
+      }
+    }
+  }
+`;
 
 const Product = ({ props }) => {
   const { product } = props;
+
   return (
     <>
       {product ? (
@@ -47,26 +67,6 @@ Product.getInitialProps = async function (context) {
 
   const id = slug ? parseInt(slug.split("-").pop()) : context.query.id;
 
-  const PRODUCT_QUERY = gql`
-    query Product($id: ID!) {
-      product(id: $id, idType: DATABASE_ID) {
-        databaseId
-        slug
-        name
-        sku
-        averageRating
-        shortDescription
-        description
-        ... on SimpleProduct {
-          id
-          name
-          regularPrice
-          price
-        }
-      }
-    }
-  `;
-
   const { data } = await client.query({
     query: PRODUCT_QUERY,
     variables: { id },
@@ -79,5 +79,24 @@ Product.getInitialProps = async function (context) {
     revalidate: 1,
   };
 };
+
+// export async function getStaticProps(context) {
+//   const {
+//     params: { slug },
+//   } = context;
+//   const id = slug ? parseInt(slug.split("-").pop()) : context.query.id;
+
+//   const { data } = await client.query({
+//     query: PRODUCT_QUERY,
+//     variables: { id },
+//   });
+
+//   return {
+//     props: {
+//       product: data?.product || {},
+//     },
+//     revalidate: 1,
+//   };
+// }
 
 export default withRouter(Product);

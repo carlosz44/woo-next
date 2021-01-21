@@ -17,7 +17,6 @@ const PRODUCTS_QUERY = gql`
         sku
         image {
           uri
-          srcSet
           title
           sourceUrl
         }
