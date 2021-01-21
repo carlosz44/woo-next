@@ -20,7 +20,7 @@ export default function AddToCartButton({ product }) {
 
         const updatedCart = updateCart(existingCart, product, qtyToBeAdded);
 
-        // setCart(updatedCart);
+        setCart(updatedCart);
       } else {
         const newCart = addFirstProduct(product);
         setCart(newCart);

@@ -1,7 +1,9 @@
+import CartItemsContainer from "@components/cart/CartItemsContainer";
+
 export default function Cart() {
   return (
     <>
-      <p>Text</p>
+      <CartItemsContainer />
     </>
   );
 }
