@@ -1,32 +1,6 @@
-import client from "src/components/ApolloClient";
-import ProductsBlock from "../src/components/product/ProductsBlock";
+import client from "@components/ApolloClient";
+// import ProductsBlock from "@components/product/ProductsBlock";
 import Image from "next/image";
-import { gql } from "@apollo/client";
-
-const PRODUCTS_QUERY = gql`
-  query {
-    products(first: 20) {
-      nodes {
-        id
-        averageRating
-        slug
-        description
-        name
-        databaseId
-        sku
-        image {
-          uri
-          title
-          sourceUrl
-        }
-        ... on SimpleProduct {
-          price
-          regularPrice
-        }
-      }
-    }
-  }
-`;
 
 export default function IndexPage({ products }) {
   return (
@@ -42,7 +16,7 @@ export default function IndexPage({ products }) {
       <h2 className="p-3 font-bold bg-yellow-300 md:text-2xl">
         Listado de productos
       </h2>
-      <ProductsBlock products={products} />
+      {/* <ProductsBlock products={products} /> */}
     </div>
   );
 }

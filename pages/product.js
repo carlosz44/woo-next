@@ -1,4 +1,4 @@
-import client from "../src/components/ApolloClient";
+import client from "@components/ApolloClient";
 import { withRouter } from "next/router";
 import { gql } from "@apollo/client";
 

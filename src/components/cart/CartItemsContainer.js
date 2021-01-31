@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useContext } from "react";
-import { removeItemFromCart } from "src/functions";
-import { AppContext } from "../context/AppContext";
+import { removeItemFromCart } from "@src/functions";
+import { AppContext } from "@context/AppContext";
 import CartItem from "./CartItem";
 
 export default function CartItemsContainer() {

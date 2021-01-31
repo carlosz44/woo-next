@@ -1,9 +1,10 @@
-import AddToCartButton from "src/components/cart/AddToCartButton";
+import AddToCartButton from "@components/cart/AddToCartButton";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductCard({ product }) {
   return (
+    // TODO: Diseño card
     <>
       <div className="p-4 bg-white flex items-center justify-between flex-col space-y-4 max-w-xs">
         <Link
@@ -11,13 +12,18 @@ export default function ProductCard({ product }) {
           href={`/product?slug=${product.slug}-${product.databaseId}`}
         >
           <a className="text-center space-y-4">
-            <Image
-              src={product.image.sourceUrl}
-              alt={product.name}
-              width={240}
-              height={240}
-              className="w-full"
-            />
+            {product.image ? (
+              <Image
+                src={product.image.sourceUrl}
+                alt={product.name}
+                width={240}
+                height={240}
+                className="w-full"
+              />
+            ) : (
+              ""
+              // TODO: Plaeholder imagen
+            )}
             <h3 className="text-base font-text uppercase leading-5 text-gray-900">
               {product.name}
             </h3>

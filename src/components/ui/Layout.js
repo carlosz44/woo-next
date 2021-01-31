@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { AppProvider } from "../context/AppContext";
+import { AppProvider } from "@context/AppContext";
 import { ApolloProvider } from "@apollo/client";
 // APOLLO REACT HOOKS
 import client from "../ApolloClient";

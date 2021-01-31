@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import { updateCart } from "../../functions";
+import { updateCart } from "@src/functions";
 
 export default function CartItem({ item, setCart, handleRemoveProductClick }) {
   const [productCount, setProductCount] = useState(item.qty);

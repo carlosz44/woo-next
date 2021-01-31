@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { addFirstProduct, getFormattedCart, updateCart } from "../../functions";
-import { AppContext } from "../context/AppContext";
+import { addFirstProduct, getFormattedCart, updateCart } from "@src/functions";
+import { AppContext } from "@context/AppContext";
 import Link from "next/link";
 
 export default function AddToCartButton({ product }) {

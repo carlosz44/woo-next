@@ -1,6 +1,6 @@
-import GET_CATEGORIES_QUERY from "../src/queries/getCategories";
-import client from "../src/components/ApolloClient";
-import CategoriesBlock from "../src/components/category/CategoriesBlock";
+import GET_CATEGORIES_QUERY from "@queries/getCategories";
+import client from "@components/ApolloClient";
+import CategoriesBlock from "@components/category/CategoriesBlock";
 
 export default function Categories({ productCategories }) {
   return (
