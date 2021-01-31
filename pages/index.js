@@ -1,7 +1,6 @@
 import client from "src/components/ApolloClient";
-import ProductCard from "../src/components/ui/ProductCard";
+import ProductsBlock from "../src/components/product/ProductsBlock";
 import Image from "next/image";
-
 import { gql } from "@apollo/client";
 
 const PRODUCTS_QUERY = gql`
@@ -43,15 +42,7 @@ export default function IndexPage({ products }) {
       <h2 className="p-3 font-bold bg-yellow-300 md:text-2xl">
         Listado de productos
       </h2>
-      <ul className="space-y-4">
-        {products.length
-          ? products.map((product) => (
-              <li key={product.id}>
-                <ProductCard product={product} />
-              </li>
-            ))
-          : ""}
-      </ul>
+      <ProductsBlock products={products} />
     </div>
   );
 }

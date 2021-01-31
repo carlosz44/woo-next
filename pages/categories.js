@@ -4,7 +4,7 @@ import CategoriesBlock from "../src/components/category/CategoriesBlock";
 
 export default function Categories({ productCategories }) {
   return (
-    <div className="categories product-categories-container container mx-auto my-32 px-4 xl:px-0">
+    <div className="flex flex-col items-center justify-center space-y-12">
       <h2 className="text-2xl mb-5 uppercase">Categorías</h2>
       <CategoriesBlock productCategories={productCategories} />
     </div>

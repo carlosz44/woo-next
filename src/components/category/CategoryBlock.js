@@ -17,10 +17,6 @@ export default function CategoryBlock({ category }) {
           </div>
         </a>
       </Link>
-
-      {/*<div className="card-body text-center">*/}
-      {/*	<h6 className="card-subtitle mb-3">Hello</h6>*/}
-      {/*</div>*/}
     </div>
   );
 }

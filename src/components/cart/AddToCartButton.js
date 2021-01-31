@@ -4,9 +4,20 @@ import { AppContext } from "../context/AppContext";
 import Link from "next/link";
 
 export default function AddToCartButton({ product }) {
+  // const productQryInput = {
+  //   clientMutationId: v4(), // Generate a unique id.
+  //   productId: product.productId,
+  // };
+
   const [cart, setCart] = useContext(AppContext);
   const [showViewCart, setShowViewCart] = useState(false);
-  // console.log(product);
+  // const [requestError, setRequestError] = useState(null);
+
+  /**
+   * Handles adding items to the cart.
+   *
+   * @return {void}
+   */
   const handleAddToCart = () => {
     // If component is rendered client side.
     if (process.browser) {
@@ -32,22 +43,28 @@ export default function AddToCartButton({ product }) {
   };
 
   return (
-    <>
-      <button
-        onClick={handleAddToCart}
-        className="px-6 py-3 text-md text-white font-bold bg-main"
-      >
-        Añadir al carrito
-      </button>
-      {showViewCart ? (
-        <Link href="/cart">
-          <button className="px-3 py-1 rounded-sm text-sm border-solid border border-current inline-block hover:bg-purple-600 hover:text-white hover:border-purple-600">
-            Ver carrito
+    <div>
+      <div className="-mt-px flex divide-x divide-gray-200">
+        <div className="w-0 flex-1 flex">
+          <button
+            onClick={handleAddToCart}
+            className="py-3 text-md text-white font-bold bg-main relative -mr-px w-0 flex-1 inline-flex items-center justify-center border border-transparent"
+          >
+            Añadir al carrito
           </button>
-        </Link>
-      ) : (
-        ""
-      )}
-    </>
+        </div>
+        {showViewCart ? (
+          <Link href="/cart">
+            <div className="-ml-px w-0 flex-1 flex">
+              <button className="py-3 text-md text-white font-bold bg-main relative w-0  flex-1 inline-flex items-center justify-center border-l">
+                Ver carrito
+              </button>
+            </div>
+          </Link>
+        ) : (
+          ""
+        )}
+      </div>
+    </div>
   );
 }
