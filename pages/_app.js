@@ -1,4 +1,6 @@
-import "../src/css/index.css";
+import "@src/css/index.css";
+import "typeface-roboto";
+import "typeface-oswald";
 import Head from "next/head";
 import Layout from "@components/ui/Layout";
 
