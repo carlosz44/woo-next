@@ -12,7 +12,7 @@ export default function Category({ categoryName, products }) {
       ) : (
         ""
       )}
-      {products.length ? (
+      {products?.length ? (
         <ProductsBlock products={products} />
       ) : (
         <p>No existen productos en esta categoría</p>

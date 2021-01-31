@@ -21,13 +21,13 @@ export default function IndexPage({ products }) {
   );
 }
 
-export async function getStaticProps() {
-  const { data } = await client.query({
-    query: PRODUCTS_QUERY,
-  });
-  return {
-    props: {
-      products: data?.products?.nodes ? data.products.nodes : [],
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const { data } = await client.query({
+//     query: PRODUCTS_QUERY,
+//   });
+//   return {
+//     props: {
+//       products: data?.products?.nodes ? data.products.nodes : [],
+//     },
+//   };
+// }
